@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자손 선택자</title>
+    <style>
+      #header > h1 {
+        color: red;
+      }
+      #section > h1 {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>선택자 A > 선택자 B ; 선택자 A의 '자손'인 선택자 B 선택</h1>
+    <h1>#header > h1; red, #header > h1; blue</h1>
+    <div id="header">
+      <h1 class="title">h1 태그; id가 header인 div의 자손이자 후손</h1>
+      <div id="nav">
+        <h1>h1 태그; id가 header인 div의 후손</h1>
+      </div>
+    </div>
+    <div id="section">
+      <h1 class="title">h1 태그; id가 section인 div의 자손이자 후손</h1>
+      <p>p 태그; id가 section인 div의 자손이자 후손</p>
+    </div>
+  </body>
+</html>

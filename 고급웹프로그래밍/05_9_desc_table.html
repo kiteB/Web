@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table, 자손 선택자</title>
+    <style>
+      table > tr > th {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <th>이름</th>
+        <th>지역</th>
+      </tr>
+      <tr>
+        <td>배연주</td>
+        <td>인천광역시</td>
+      </tr>
+    </table>
+    <h3>
+      웹 브라우저가 'tbody' 태그를 자동으로 추가해서 스타일 속성이 적용이 안됨.
+      <br />
+      → table 태그에 스타일을 적용할 때는 자손 선택자를 사용하지 않음.
+    </h3>
+  </body>
+</html>
