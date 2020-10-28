@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구조 선택자 주의사항</title>
+    <style>
+      li > a:first-child {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="#">주의 사항</a></li>
+      <li><a href="#">주의 사항</a></li>
+      <li><a href="#">주의 사항</a></li>
+      <li><a href="#">주의 사항</a></li>
+      <li><a href="#">주의 사항</a></li>
+    </ul>
+    <p>
+      li > a:first-child 속성이었기 때문에, 첫 번째 a 태그에 스타일이
+      적용되었다고 예측할 수도 있지만, 모든 a 태그에 스타일이 적용됨. li 태그의
+      첫 번째 자손에 해당하는 a 태그를 선택했으므로 a 태그 5개가 전부 이 조건에
+      해당함.
+    </p>
+    <p>
+      첫 번째 a 태그에만 스타일을 적용하려면, li:first-child > a 이렇게
+      입력해야함!
+    </p>
+  </body>
+</html>
