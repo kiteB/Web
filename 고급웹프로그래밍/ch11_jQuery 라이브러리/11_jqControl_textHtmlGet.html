@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery Basic</title>
+    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+      $(document).ready(function () {
+        // 변수 선언
+        // text() 메서드는 h1에 해당하는 모든 것!
+        // html() 메서드는 h1에 해당하는 것 중 하나만!
+        var text = $("h1").text();
+        var html = $("h1").html();
+
+        // 출력
+        alert("text: " + text);
+        alert("html: " + html);
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Header - 0</h1>
+    <h1>Header - 1</h1>
+  </body>
+</html>
