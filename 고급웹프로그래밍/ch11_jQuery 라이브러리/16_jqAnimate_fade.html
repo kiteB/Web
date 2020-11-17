@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Basic</title>
+    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+      // 이벤트 연결
+      $(document).ready(function () {
+        // 이벤트 연결
+        $("button").click(function () {
+          // 간단한 효과 적용
+          // page class 안에 있는 내용들이 사라졌다가 나타남.
+          $(".page").fadeToggle("slow");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button>Toggle Show</button>
+    <div class="page">
+      <h1>Lorem ipsum dolor sit amet</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </body>
+</html>
