@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery DOM</title>
+    <script src="http://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+      // 이벤트 연결
+      $(document).ready(function () {
+        // 10회 반복
+        for (var i = 0; i < 10; i++) {
+          // 문서 객체 생성
+          // jQuery 객체가 할당된 변수명은 보통 $로 시작하도록 설정함. (관습)
+          var $dynamic = $("<h1>Create Document Object + " + i + "</h1>").css({
+            backgroundColor: "black",
+            color: "red",
+          });
+
+          // 문서 객체 추가
+          $("body").append($dynamic);
+        }
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

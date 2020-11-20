@@ -4,7 +4,7 @@
     <title>Frame Animation</title>
     <script>
       window.onload = function () {
-        // 변수를 선언합니다.
+        // 변수 선언
         var count = 0;
         var image = document.getElementById("image");
         var frames = [
@@ -24,7 +24,7 @@
           "13.png",
           "14.png",
         ];
-        // 타이머 반복을 시작합니다.
+        // 타이머 반복 시작
         setInterval(function () {
           // 앞으로 달리기
           image.src = frames[count % frames.length];
