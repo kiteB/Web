@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>정규식</title>
+    <script>
+      // case 1
+      function checkNumeric1(elem, msg) {
+        var exp = /Hello/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 2
+      function checkNumeric2(elem, msg) {
+        var exp = /hello/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 버튼 -->
+    <input
+      type="button"
+      onclick="checkNumeric1(document.getElementById('ptext1'), 'non-matching')"
+      value="case 1"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric2(document.getElementById('ptext1'), 'non-matching')"
+      value="case 2"
+    />
+    <!-- page 설명 -->
+    <p>정규식은 대소문자를 구분함.</p>
+    <h2>Regular Expression: Hello</h2>
+    <form>
+      <h3>case 1</h3>
+      <p id="ptext1">Hello, world!</p>
+    </form>
+    <form>
+      <h3>case 2</h3>
+      <p id="ptext2">Hello, world!</p>
+    </form>
+    <span style="color: red"
+      >=> case 1은 지정된 텍스트를 찾지만, case 2는 찾지 못함.</span
+    >
+  </body>
+</html>
