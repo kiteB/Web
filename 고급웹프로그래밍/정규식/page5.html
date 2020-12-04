@@ -5,7 +5,7 @@
     <script>
       // case 1
       function checkNumeric1(elem, msg) {
-        var exp = /Hello, world!/g;
+        var exp = /./g;
         var t = elem.innerText.match(exp);
         alert(t);
         if (t) {
@@ -18,7 +18,7 @@
       }
       // case 2
       function checkNumeric2(elem, msg) {
-        var exp = /Hello,     world!/g;
+        var exp = /....../g;
         var t = elem.innerText.match(exp);
         alert(t);
         if (t) {
@@ -40,24 +40,25 @@
     />
     <input
       type="button"
-      onclick="checkNumeric2(document.getElementById('ptext1'), 'non-matching')"
+      onclick="checkNumeric2(document.getElementById('ptext2'), 'non-matching')"
       value="case 2"
     />
     <!-- page 설명 -->
-    <p>검색 패턴 내의 white space는 영향을 미침.</p>
+    <p>point . 은 any character를 의미함.</p>
     <form>
       <h3>case 1</h3>
-      <h3>Regular Expression: Hello, world!</h3>
-      <p id="ptext1">Hello, world!</p>
+      <h3>Regular Expression: .</h3>
+      <p id="ptext1">Regular expressions are powerful!!!</p>
     </form>
     <br />
     <form>
       <h3>case 2</h3>
-      <h3>Regular Expression: Hello, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;world!</h3>
-      <p id="ptext2">Hello, world!</p>
+      <h3>Regular Expression: ......</h3>
+      <p id="ptext2">Regular expressions are powerful!!!</p>
     </form>
     <span style="color: red"
-      >=> case 1은 지정된 텍스트를 찾지만, case 2는 찾지 못함.</span
+      >=> case 1: 문자를 찾아라.<br />
+      case 2: 문자 6개를 찾아라.</span
     >
   </body>
 </html>
