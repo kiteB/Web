@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>정규식</title>
+    <script>
+      // case 1
+      function checkNumeric1(elem, msg) {
+        var exp = /^$/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 2
+      function checkNumeric2(elem, msg) {
+        var exp = /\$/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 3
+      function checkNumeric3(elem, msg) {
+        var exp = /^\$/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 4
+      function checkNumeric4(elem, msg) {
+        var exp = /\$$/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 5
+      function checkNumeric5(elem, msg) {
+        var exp = /\\/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 버튼 -->
+    <input
+      type="button"
+      onclick="checkNumeric1(document.getElementById('ptext1'), 'non-matching')"
+      value="case 1"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric2(document.getElementById('ptext2'), 'non-matching')"
+      value="case 2"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric3(document.getElementById('ptext3'), 'non-matching')"
+      value="case 3"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric4(document.getElementById('ptext4'), 'non-matching')"
+      value="case 4"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric5(document.getElementById('ptext5'), 'non-matching')"
+      value="case 5"
+    />
+    <!-- page 설명 -->
+    <p>백슬래시 \은 기호를 문자 그대로로 사용하기 위해 사용함.</p>
+    <form>
+      <h3>case 1</h3>
+      <h3>Regular Expression: ^$</h3>
+      <p id="ptext1">$12$ \-\ $25$</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 2</h3>
+      <h3>Regular Expression: \$</h3>
+      <p id="ptext2">$12$ \-\ $25$</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 3</h3>
+      <h3>Regular Expression: ^\$</h3>
+      <p id="ptext3">$12$ \-\ $25$</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 4</h3>
+      <h3>Regular Expression: \$$</h3>
+      <p id="ptext4">$12$ \-\ $25$</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 5</h3>
+      <h3>Regular Expression: \\</h3>
+      <p id="ptext5">$12$ \-\ $25$</p>
+    </form>
+    <br />
+
+    <span style="color: red"
+      >=> case 1: ^와 $는 모두 특별한 기호이므로 이렇게 사용하면 안됨.
+      <br />case 2: $에 해당하는 것 찾기. <br />case 3: $로 시작하는 것 중 줄의
+      맨 처음에 있는 것 찾기 <br />case 4: $로 끝나는 것 중 줄의 맨 끝에 있는 것
+      찾기 <br />case 5: \에 해당하는 것 찾기.</span
+    >
+  </body>
+</html>
