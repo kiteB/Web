@@ -5,7 +5,7 @@
     <script>
       // case 1
       function checkNumeric1(elem, msg) {
-        var exp = /Hello/g;
+        var exp = /^who/g;
         var t = elem.innerText.match(exp);
         alert(t);
         if (t) {
@@ -18,7 +18,7 @@
       }
       // case 2
       function checkNumeric2(elem, msg) {
-        var exp = /hello/g;
+        var exp = /who$/g;
         var t = elem.innerText.match(exp);
         alert(t);
         if (t) {
@@ -47,17 +47,18 @@
     <p>정규식은 대소문자를 구분함.</p>
     <form>
       <h3>case 1</h3>
-      <h3>Regular Expression: Hello</h3>
-      <p id="ptext1">Hello, world!</p>
+      <h3>Regular Expression: ^who</h3>
+      <p id="ptext1">who is who</p>
     </form>
     <br />
     <form>
       <h3>case 2</h3>
-      <h3>Regular Expression: hello</h3>
-      <p id="ptext2">Hello, world!</p>
+      <h3>Regular Expression: who$</h3>
+      <p id="ptext2">who is who</p>
     </form>
     <span style="color: red"
-      >=> case 1은 지정된 텍스트를 찾지만, case 2는 찾지 못함.</span
+      >=> case 1은 줄의 시작이 who인 것을 찾음. <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case 2는 줄의 끝이 who인 것을 찾음.</span
     >
   </body>
 </html>

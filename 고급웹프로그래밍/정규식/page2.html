@@ -5,7 +5,7 @@
     <script>
       // case 1
       function checkNumeric1(elem, msg) {
-        var exp = /Hello/g;
+        var exp = /Hello, world!/g;
         var t = elem.innerText.match(exp);
         alert(t);
         if (t) {
@@ -18,7 +18,7 @@
       }
       // case 2
       function checkNumeric2(elem, msg) {
-        var exp = /hello/g;
+        var exp = /Hello,     world!/g;
         var t = elem.innerText.match(exp);
         alert(t);
         if (t) {
@@ -44,16 +44,16 @@
       value="case 2"
     />
     <!-- page 설명 -->
-    <p>정규식은 대소문자를 구분함.</p>
+    <p>검색 패턴 내의 white space는 영향을 미침.</p>
     <form>
       <h3>case 1</h3>
-      <h3>Regular Expression: Hello</h3>
+      <h3>Regular Expression: Hello, world!</h3>
       <p id="ptext1">Hello, world!</p>
     </form>
     <br />
     <form>
       <h3>case 2</h3>
-      <h3>Regular Expression: hello</h3>
+      <h3>Regular Expression: Hello, &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;world!</h3>
       <p id="ptext2">Hello, world!</p>
     </form>
     <span style="color: red"
