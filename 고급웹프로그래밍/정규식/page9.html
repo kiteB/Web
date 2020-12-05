@@ -5,7 +5,7 @@
     <script>
       // case 1
       function checkNumeric1(elem, msg) {
-        var exp = /Hello/g;
+        var exp = /[^CDghi45]/g;
         var t = elem.innerText.match(exp);
         alert(t);
         if (t) {
@@ -18,7 +18,7 @@
       }
       // case 2
       function checkNumeric2(elem, msg) {
-        var exp = /hello/g;
+        var exp = /[^W-Z]/g;
         var t = elem.innerText.match(exp);
         alert(t);
         if (t) {
@@ -44,20 +44,25 @@
       value="case 2"
     />
     <!-- page 설명 -->
-    <p>정규식은 대소문자를 구분함.</p>
+    <p>ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</p>
     <form>
       <h3>case 1</h3>
-      <h3>Regular Expression: Hello</h3>
-      <p id="ptext1">Hello, world!</p>
+      <h3>Regular Expression: [^CDghi45]</h3>
+      <p id="ptext1">
+        ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789
+      </p>
     </form>
     <br />
     <form>
       <h3>case 2</h3>
-      <h3>Regular Expression: hello</h3>
-      <p id="ptext2">Hello, world!</p>
+      <h3>Regular Expression: [^W-Z]</h3>
+      <p id="ptext2">
+        ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789
+      </p>
     </form>
     <span style="color: red"
-      >=> case 1은 지정된 텍스트를 찾지만, case 2는 찾지 못함.</span
+      >=> case 1: CDghi45을 제외한 문자를 찾아라. <br />
+      case 2: W-Z를 제외한 문자를 찾아라.</span
     >
   </body>
 </html>

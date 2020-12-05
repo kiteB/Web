@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>정규식</title>
+    <script>
+      // case 1
+      function checkNumeric1(elem, msg) {
+        var exp = /[oyu]/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 2
+      function checkNumeric2(elem, msg) {
+        var exp = /[dH]./g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 3
+      function checkNumeric3(elem, msg) {
+        var exp = /[owy][yow]/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 버튼 -->
+    <input
+      type="button"
+      onclick="checkNumeric1(document.getElementById('ptext1'), 'non-matching')"
+      value="case 1"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric2(document.getElementById('ptext2'), 'non-matching')"
+      value="case 2"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric3(document.getElementById('ptext3'), 'non-matching')"
+      value="case 3"
+    />
+    <!-- page 설명 -->
+    <p>
+      대괄호 [ ]의 내부에는 문자 리스트를 넣을 수 있음.
+      <br />리스트 안에 있는 문자 중 하나라도 발견되면 식이 일치하며, 글자의
+      순서는 상관없음.
+    </p>
+    <form>
+      <h3>case 1</h3>
+      <h3>Regular Expression: [oyu]</h3>
+      <p id="ptext1">How do you do?</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 2</h3>
+      <h3>Regular Expression: [dH].</h3>
+      <p id="ptext2">How do you do?</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 3</h3>
+      <h3>Regular Expression: [owy][yow]</h3>
+      <p id="ptext3">How do you do?</p>
+    </form>
+
+    <span style="color: red"
+      >=> case 1: o 또는 y 또는 u 찾기. <br />case 2: 'd 다음에 어떤 문자 하나'
+      또는 'H 다음에 어떤 문자 하나' 찾기 <br />case 3: 'o 또는 w 또는 y 중
+      하나' AND 'y 또는 o 또는 w' 찾기</span
+    >
+  </body>
+</html>
