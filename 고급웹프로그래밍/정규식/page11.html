@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>정규식</title>
+    <script>
+      // case 1
+      function checkNumeric1(elem, msg) {
+        var exp = /a*b/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 2
+      function checkNumeric2(elem, msg) {
+        var exp = /a+b/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 3
+      function checkNumeric3(elem, msg) {
+        var exp = /a?b/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 버튼 -->
+    <input
+      type="button"
+      onclick="checkNumeric1(document.getElementById('ptext1'), 'non-matching')"
+      value="case 1"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric2(document.getElementById('ptext2'), 'non-matching')"
+      value="case 2"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric3(document.getElementById('ptext3'), 'non-matching')"
+      value="case 3"
+    />
+    <!-- page 설명 -->
+    <p>
+      수량 한정자는 문자가 발생할 수 있는 횟수를 지정함. (수량 한정자 바로 앞에
+      있는 문자)<br />
+      *은 0회 이상 (Case 1)<br />
+      +는 1회 이상 (Case 2)<br />
+      ?는 0 또는 1 (Case 3)
+    </p>
+    <form>
+      <h3>case 1</h3>
+      <h3>Regular Expression: a*b</h3>
+      <p id="ptext1">aabc abc bc</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 2</h3>
+      <h3>Regular Expression: a+b</h3>
+      <p id="ptext2">aabc abc bc</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 3</h3>
+      <h3>Regular Expression: a?b</h3>
+      <p id="ptext3">aabc abc bc</p>
+    </form>
+    <span style="color: red"
+      >=> case 1: 'a가 0회 이상 + b' 형태를 찾아라. <br />case 2: 'a가 1회 이상
+      + b' 형태를 찾아라.<br />case 3: 'a가 0 또는 1회 + b' 형태를 찾아라</span
+    >
+  </body>
+</html>

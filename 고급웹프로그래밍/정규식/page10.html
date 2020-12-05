@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>정규식</title>
+    <script>
+      // case 1
+      function checkNumeric1(elem, msg) {
+        var exp = /(on|ues|rida)/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 2
+      function checkNumeric2(elem, msg) {
+        var exp = /(Mon|Tues|Fri)day/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 3
+      function checkNumeric3(elem, msg) {
+        var exp = /..(id|esd|nd)ay/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 버튼 -->
+    <input
+      type="button"
+      onclick="checkNumeric1(document.getElementById('ptext1'), 'non-matching')"
+      value="case 1"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric2(document.getElementById('ptext2'), 'non-matching')"
+      value="case 2"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric3(document.getElementById('ptext3'), 'non-matching')"
+      value="case 3"
+    />
+    <!-- page 설명 -->
+    <p>선택 가능한 텍스트는 괄호로 묶을 수 있으며, |로 구분 가능함.</p>
+    <form>
+      <h3>case 1</h3>
+      <h3>Regular Expression: (on|ues|rida)</h3>
+      <p id="ptext1">Monday Tuesday Friday</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 2</h3>
+      <h3>Regular Expression: (Mon|Tues|Fri)day</h3>
+      <p id="ptext2">Monday Tuesday Friday</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 3</h3>
+      <h3>Regular Expression: ..(id|esd|nd)ay</h3>
+      <p id="ptext3">Monday Tuesday Friday</p>
+    </form>
+
+    <span style="color: red"
+      >=> case 1: 'on' 또는 'ues' 또는 'rida'가 들어간 것을 찾아라. <br />case
+      2: ('Mon' 또는 'Tues' 또는 'Fri') + day 를 찾아라. <br />case 3: '어떤
+      문자든 2개' + ('id' 또는 'esd' 또는 'nd') + ay
+    </span>
+  </body>
+</html>
