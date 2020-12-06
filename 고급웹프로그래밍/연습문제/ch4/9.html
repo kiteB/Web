@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #label {
+        text-align: center;
+      }
+      #submit {
+        margin-left: 55px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h1>글 작성하기</h1>
+      <table>
+        <tr>
+          <td>
+            <label for="name"><b>작성자</b></label>
+          </td>
+          <td><input id="username" type="text" name="username" /></td>
+        </tr>
+        <tr>
+          <td>
+            <label for="id"><b>아이디</b></label>
+          </td>
+          <td><input id="userid" type="text" name="userid" /></td>
+        </tr>
+        <tr>
+          <td>
+            <label for="mail"><b>이메일</b></label>
+          </td>
+          <td>
+            <input id="mail" type="mail" name="mail" />@<input
+              id="mail"
+              type="mail"
+              name="mail"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="phone"><b>휴대폰</b></label>
+          </td>
+          <td>
+            <select>
+              <option>010</option>
+            </select>
+            -<input id="phone" type="text" name="phone" />-<input
+              id="phone"
+              type="text"
+              name="phone"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="title"><b>글제목</b></label>
+          </td>
+          <td>
+            <input id="title" type="text" name="title" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="label">
+              <label for="content" class="con_title"><b>내용</b></label>
+            </div>
+          </td>
+          <td>
+            <textarea
+              id="content"
+              cols="50"
+              rows="10"
+              name="content"
+            ></textarea>
+          </td>
+        </tr>
+      </table>
+      <input id="submit" type="submit" value="제출" />
+    </form>
+  </body>
+</html>
