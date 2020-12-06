@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>정규식</title>
+    <script>
+      // case 1
+      function checkNumeric1(elem, msg) {
+        var exp = /\d/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 2
+      function checkNumeric2(elem, msg) {
+        var exp = /\D/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 3
+      function checkNumeric3(elem, msg) {
+        var exp = /[0-9]/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 버튼 -->
+    <input
+      type="button"
+      onclick="checkNumeric1(document.getElementById('ptext1'), 'non-matching')"
+      value="case 1"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric2(document.getElementById('ptext2'), 'non-matching')"
+      value="case 2"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric3(document.getElementById('ptext3'), 'non-matching')"
+      value="case 3"
+    />
+    <!-- page 설명 -->
+    <p>
+      \d는 숫자를 나타내며, \D는 숫자를 제외한 모든 것을 의미함.<br />\d는
+      [0-9]로도 표현 가능함.
+    </p>
+    <form>
+      <h3>case 1</h3>
+      <h3>Regular Expression: \d</h3>
+      <p id="ptext1">Page 123; published: 1234 id=12#24@112</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 2</h3>
+      <h3>Regular Expression: \D</h3>
+      <p id="ptext2">Page 123; published: 1234 id=12#24@112</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 3</h3>
+      <h3>Regular Expression: [0-9]</h3>
+      <p id="ptext3">Page 123; published: 1234 id=12#24@112</p>
+    </form>
+    <span style="color: red"
+      >=> case 1: 숫자를 찾아라.<br />case 2: 문자를 찾아라.<br />
+      case 3: 숫자를 찾아라. (Case 1과 완벽하게 동일)</span
+    >
+    >
+  </body>
+</html>
