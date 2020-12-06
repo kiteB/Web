@@ -5,7 +5,7 @@
     <script>
       // case 1
       function checkNumeric1(elem, msg) {
-        var exp = /\d/g;
+        var exp = /\b./g;
         var t = elem.innerText.match(exp);
         alert(t);
         if (t) {
@@ -18,20 +18,7 @@
       }
       // case 2
       function checkNumeric2(elem, msg) {
-        var exp = /\D/g;
-        var t = elem.innerText.match(exp);
-        alert(t);
-        if (t) {
-          alert("matching");
-          return true;
-        } else {
-          alert(msg);
-          return false;
-        }
-      }
-      // case 3
-      function checkNumeric3(elem, msg) {
-        var exp = /[0-9]/g;
+        var exp = /.\b/g;
         var t = elem.innerText.match(exp);
         alert(t);
         if (t) {
@@ -56,36 +43,35 @@
       onclick="checkNumeric2(document.getElementById('ptext2'), 'non-matching')"
       value="case 2"
     />
-    <input
-      type="button"
-      onclick="checkNumeric3(document.getElementById('ptext3'), 'non-matching')"
-      value="case 3"
-    />
     <!-- page 설명 -->
     <p>
-      \d는 숫자를 나타내며, \D는 숫자를 제외한 모든 것을 의미함.<br />\d는
-      [0-9]로도 표현 가능함.
+      \b는 word boundary(두 개의 캐릭터 사이의 경계)를 나타냄.<br />word
+      boundary는 한쪽에 \w(alphanumeric)가 있고 다른 쪽에 \W(non-alphanumeric)가
+      있는 두 문자 사이의 점으로 정의됨.
     </p>
     <form>
       <h3>case 1</h3>
-      <h3>Regular Expression: \d</h3>
-      <p id="ptext1">Page 123; published: 1234 id=12#24@112</p>
+      <h3>Regular Expression: \b.</h3>
+      <p id="ptext1">
+        Ere iron was found or tree was hewn, When young was mountain under
+        moon;Ere ring was made, or wrought was woe, It walked the forests long
+        ago.
+      </p>
     </form>
     <br />
     <form>
       <h3>case 2</h3>
-      <h3>Regular Expression: \D</h3>
-      <p id="ptext2">Page 123; published: 1234 id=12#24@112</p>
+      <h3>Regular Expression: .\b</h3>
+      <p id="ptext2">
+        Ere iron was found or tree was hewn, When young was mountain under
+        moon;Ere ring was made, or wrought was woe, It walked the forests long
+        ago.
+      </p>
     </form>
     <br />
-    <form>
-      <h3>case 3</h3>
-      <h3>Regular Expression: [0-9]</h3>
-      <p id="ptext3">Page 123; published: 1234 id=12#24@112</p>
-    </form>
     <span style="color: red"
-      >=> case 1: 숫자를 찾아라.<br />case 2: 문자를 찾아라.<br />
-      case 3: 숫자를 찾아라. (Case 1과 완벽하게 동일)</span
+      >=> case 1: 경계 뒤 바로 첫 문자를 찾기.<br />case 2: 경계 앞 바로 첫
+      문자를 찾기.</span
     >
   </body>
 </html>
