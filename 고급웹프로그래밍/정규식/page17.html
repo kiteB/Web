@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>정규식</title>
+    <script>
+      // case 1
+      function checkNumeric1(elem, msg) {
+        var exp = /r.*/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 2
+      function checkNumeric2(elem, msg) {
+        var exp = /r.*?/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 3
+      function checkNumeric3(elem, msg) {
+        var exp = /r.+/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 4
+      function checkNumeric4(elem, msg) {
+        var exp = /r.+?/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 5
+      function checkNumeric5(elem, msg) {
+        var exp = /r.?/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 6
+      function checkNumeric6(elem, msg) {
+        var exp = /r.??/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 버튼 -->
+    <input
+      type="button"
+      onclick="checkNumeric1(document.getElementById('ptext1'), 'non-matching')"
+      value="case 1"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric2(document.getElementById('ptext2'), 'non-matching')"
+      value="case 2"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric3(document.getElementById('ptext3'), 'non-matching')"
+      value="case 3"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric4(document.getElementById('ptext4'), 'non-matching')"
+      value="case 4"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric5(document.getElementById('ptext5'), 'non-matching')"
+      value="case 5"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric6(document.getElementById('ptext6'), 'non-matching')"
+      value="case 6"
+    />
+    <!-- page 설명 -->
+    <p>
+      기본적으로 모든 하위 패턴은 가능한 한 많이 일치함.<br />수량한정자 + ? →
+      수량한정자의 최솟값만 취함!
+    </p>
+    <form>
+      <h3>case 1</h3>
+      <h3>Regular Expression: r.*</h3>
+      <p id="ptext1">
+        One ring to bring them all and in the darkness bind them
+      </p>
+    </form>
+    <br />
+    <form>
+      <h3>case 2</h3>
+      <h3>Regular Expression: r.*?</h3>
+      <p id="ptext2">
+        One ring to bring them all and in the darkness bind them
+      </p>
+    </form>
+    <br />
+    <form>
+      <h3>case 3</h3>
+      <h3>Regular Expression: r.+</h3>
+      <p id="ptext3">
+        One ring to bring them all and in the darkness bind them
+      </p>
+    </form>
+    <br />
+    <form>
+      <h3>case 4</h3>
+      <h3>Regular Expression: r.+?</h3>
+      <p id="ptext4">
+        One ring to bring them all and in the darkness bind them
+      </p>
+    </form>
+    <br />
+    <form>
+      <h3>case 5</h3>
+      <h3>Regular Expression: r.?</h3>
+      <p id="ptext5">
+        One ring to bring them all and in the darkness bind them
+      </p>
+    </form>
+    <br />
+    <form>
+      <h3>case 6</h3>
+      <h3>Regular Expression: r.??</h3>
+      <p id="ptext6">
+        One ring to bring them all and in the darkness bind them
+      </p>
+    </form>
+
+    <span style="color: red"
+      >=> case 1: 'r + any character(0회 이상)'인 형태를 찾아라.<br />case 2: 'r
+      + any character(* 기호의 최솟값만큼)'인 형태 찾기 => 'r + (any
+      character(0회)'인 형태 찾기 -> 즉 r만 찾기! <br />case 3: 'r + any
+      character(1회 이상)'인 형태 찾기.<br />case 4: 'r + any character(+ 기호의
+      최솟값만큼)'인 형태 찾기. => 'r + (any character(1회)'인 형태 찾기<br />case
+      5: 'r + any character(0 또는 1회)'인 형태 찾기.<br />case 6: 'r + any
+      character(? 기호의 최솟값만큼)'인 형태 찾기. => 'r + (any
+      character(0회)'인 형태 찾기 -> 즉 r만 찾기!
+    </span>
+  </body>
+</html>

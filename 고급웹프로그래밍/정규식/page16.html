@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>정규식</title>
+    <script>
+      // case 1
+      function checkNumeric1(elem, msg) {
+        var exp = /AB*A/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 2
+      function checkNumeric2(elem, msg) {
+        var exp = /AB{0,}A/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 3
+      function checkNumeric3(elem, msg) {
+        var exp = /AB+A/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 4
+      function checkNumeric4(elem, msg) {
+        var exp = /AB{1,}A/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 5
+      function checkNumeric5(elem, msg) {
+        var exp = /AB?A/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 버튼 -->
+    <input
+      type="button"
+      onclick="checkNumeric1(document.getElementById('ptext1'), 'non-matching')"
+      value="case 1"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric2(document.getElementById('ptext2'), 'non-matching')"
+      value="case 2"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric3(document.getElementById('ptext3'), 'non-matching')"
+      value="case 3"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric4(document.getElementById('ptext4'), 'non-matching')"
+      value="case 4"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric5(document.getElementById('ptext5'), 'non-matching')"
+      value="case 5"
+    />
+    <!-- page 설명 -->
+    <p>
+      수량한정자 '*', '+', '?'는 괄호 표기법의 특별한 케이스. (수량한정자는
+      대괄호를 이용해서 나타낼 수 있음)<br />
+      * == {0, }<br />
+      + == {1, }<br />
+      ? == {0, 1}<br />
+    </p>
+    <form>
+      <h3>case 1</h3>
+      <h3>Regular Expression: AB*A</h3>
+      <p id="ptext1">AA ABA ABBA ABBBA</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 2</h3>
+      <h3>Regular Expression: AB{0,}A</h3>
+      <p id="ptext2">AA ABA ABBA ABBBA</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 3</h3>
+      <h3>Regular Expression: AB+A</h3>
+      <p id="ptext3">AA ABA ABBA ABBBA</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 4</h3>
+      <h3>Regular Expression: AB{1,}A</h3>
+      <p id="ptext4">AA ABA ABBA ABBBA</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 5</h3>
+      <h3>Regular Expression: AB?A</h3>
+      <p id="ptext5">AA ABA ABBA ABBBA</p>
+    </form>
+
+    <span style="color: red"
+      >=> case 1: 'A + B가 0회 이상 + A'인 형태를 찾아라.<br />case 2: 'A + B가
+      0회 이상 + A'인 형태를 찾아라. (Case 1과 완벽하게 동일). <br />case 3: 'A
+      + B가 1회 이상 + A'인 형태를 찾아라<br />case 4: 'A + B가 1회 이상 + A'인
+      형태를 찾아라. (Case 3과 완벽하게 동일) <br />case 5: 'A + B가 0회 또는
+      1회 + A'인 형태를 찾아라.
+    </span>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>정규식</title>
+    <script>
+      // case 1
+      function checkNumeric1(elem, msg) {
+        var exp = /\w/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 2
+      function checkNumeric2(elem, msg) {
+        var exp = /\w*/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 3
+      function checkNumeric3(elem, msg) {
+        var exp = /[a-z]\w*/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 4
+      function checkNumeric4(elem, msg) {
+        var exp = /\w{5}/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 5
+      function checkNumeric5(elem, msg) {
+        var exp = /[A-z0-9_]/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 버튼 -->
+    <input
+      type="button"
+      onclick="checkNumeric1(document.getElementById('ptext1'), 'non-matching')"
+      value="case 1"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric2(document.getElementById('ptext2'), 'non-matching')"
+      value="case 2"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric3(document.getElementById('ptext3'), 'non-matching')"
+      value="case 3"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric4(document.getElementById('ptext4'), 'non-matching')"
+      value="case 4"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric5(document.getElementById('ptext5'), 'non-matching')"
+      value="case 5"
+    />
+    <!-- page 설명 -->
+    <p>
+      \w (alphanumeric) = alphabet + number + under bar("_")<br />특수문자,
+      화이트 스페이스 등은 제외<br />문자 클래스 [A-z0-9]로도 표현 가능
+    </p>
+    <form>
+      <h3>case 1</h3>
+      <h3>Regular Expression: \w</h3>
+      <p id="ptext1">A1 B2 c3 d_4 e:5 ffGG77--__—</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 2</h3>
+      <h3>Regular Expression: \w*</h3>
+      <p id="ptext2">A1 B2 c3 d_4 e:5 ffGG77--__—</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 3</h3>
+      <h3>Regular Expression: [a-z]\w*</h3>
+      <p id="ptext3">A1 B2 c3 d_4 e:5 ffGG77--__—</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 4</h3>
+      <h3>Regular Expression: \w{5}</h3>
+      <p id="ptext4">A1 B2 c3 d_4 e:5 ffGG77--__—</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 5</h3>
+      <h3>Regular Expression: [A-z0-9_]</h3>
+      <p id="ptext5">A1 B2 c3 d_4 e:5 ffGG77--__—</p>
+    </form>
+
+    <span style="color: red"
+      >=> case 1: 알파벳과 숫자, 언더바만 찾기!<br />case 2: 알파벳, 숫자,
+      언더바 0개 이상 찾기 <br />case 3: 'a~z' + alphanumeric 0개 이상 찾기<br />case
+      4: alphanumeric 5개 이상 <br />case 5: 'A~z, 0~9, _'을 찾아라 ==
+      alphanumeric을 찾아라!
+    </span>
+  </body>
+</html>
