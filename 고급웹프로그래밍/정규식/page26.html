@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>정규식</title>
+    <script>
+      // case 1
+      function checkNumeric1(elem, msg) {
+        var exp = /AAA(?!X)/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+      // case 2
+      function checkNumeric2(elem, msg) {
+        var exp = /AAA/g;
+        var t = elem.innerText.match(exp);
+        alert(t);
+        if (t) {
+          alert("matching");
+          return true;
+        } else {
+          alert(msg);
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 버튼 -->
+    <input
+      type="button"
+      onclick="checkNumeric1(document.getElementById('ptext1'), 'non-matching')"
+      value="case 1"
+    />
+    <input
+      type="button"
+      onclick="checkNumeric2(document.getElementById('ptext2'), 'non-matching')"
+      value="case 2"
+    />
+    <!-- page 설명 -->
+    <p>pattern을 찾아보고 존재하면 찾은 것 중에서 제외하기.</p>
+    <form>
+      <h3>case 1</h3>
+      <h3>Regular Expression: AAA(?!X)</h3>
+      <p id="ptext1">AAAX---AAA</p>
+    </form>
+    <br />
+    <form>
+      <h3>case 2</h3>
+      <h3>Regular Expression: AAA</h3>
+      <p id="ptext2">AAAX---AAA</p>
+    </form>
+    <br />
+    <span style="color: red"
+      >=> case 1: X가 있다면 제외<br />case 2: AAA 찾기</span
+    >
+  </body>
+</html>
