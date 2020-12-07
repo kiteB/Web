@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Email</title>
+    <script>
+        function checkEmail(elem) {
+
+            // 아래 var exp = 한 줄만 완성하면 됩니다.
+            
+            var exp = /.+(?!=\s)/g;
+            
+            // 위 답에 대해 여기에 자세히 분석하여 설명하시오.
+            // 모든 문자를 찾는데, \s인 패턴을 찾아보고 존재하면 찾은 것 중에서 제외하라
+
+            
+
+            var t = elem.innerText.match(exp);
+            alert(t);
+        }
+    </script>
+</head>
+<body>
+
+    <input type='button' 
+        onclick="checkEmail(document.getElementById('email'))"
+        value='확인' />
+    </form>
+
+    <p id='email'>
+        _3kim.kim@gmail.com
+        <br> lee4g@sch.ac.kr
+    </p>
+    <form>
+
+</body>
